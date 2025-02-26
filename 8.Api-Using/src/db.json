@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "username": "johnD",
+      "password": "JohnD123",
+      "email": "johnD123@gmail.com",
+      "postId": "7"
+    },
+    {
+      "id": "2",
+      "name": "Betül Salim",
+      "username": "BetülS",
+      "password": "BetülS2003",
+      "email": "BetülS2003@gmail.com",
+      "postId": "8"
+    },
+    {
+      "id": "e392",
+      "name": "Jane Smith",
+      "username": "janeS",
+      "password": "JaneS101",
+      "email": "JaneS101@gmail.com",
+      "postId": "9"
+    }
+  ]
+}
