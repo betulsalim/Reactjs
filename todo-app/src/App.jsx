@@ -6,12 +6,35 @@ import ToDoCreate from './components/ToDoCreate'
 import ToDoList from './components/ToDoList'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState([]);
+
+  const createToDo = (todo) => {
+    setTodos([...todos, todo]);
+  }
+
+  const deleteToDo = (id) => {
+    setTodos([...(todos.filter(todo => todo.id !== id))]);
+  }
+
+  const updateToDo = (request) => {
+    const {id, content} = request;
+    const newTodos = todos.map(todo => {
+      if(todo.id === id) {
+        return {
+          ...todo,
+          content
+        }
+      }
+      return todo;
+    })
+    setTodos(newTodos);
+  }
 
   return (
     <div className='app'>
-      <div className='todo-create-div'>
-      <ToDoCreate />  <ToDoList />
+      <div className='main'>
+      <ToDoCreate onCreateTodo = {createToDo} />
+      <ToDoList todos = {todos} onDeleteTodo={deleteToDo} onUpdateTodo={updateToDo}/>
 
       </div>
     </div>
